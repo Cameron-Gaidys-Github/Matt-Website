@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Amende and Schultz</title>
+    <link rel="stylesheet" href="contactStyles.css" type="text/css">
+    <link rel="shortcut icon" type="image/png" href="small-logo.png">
+</head>
+<body>
+    <header id="header">
+        <div class="banner"></div>
+        <a href="index.html">
+            <div class="logo-container">
+                <img src="logo.png" alt="Amende and Schultz Logo" class="logo">
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>    
+    <div class="line"></div>
+
+    <main>
+        <section id="contact">
+            <div class="content">
+                <h2>Contact Us</h2>
+                <p>Have a question or feedback? Feel free to send us a message using the form below. 
+                    We typically respond within 24 hours.
+                    You can also reach us directly via phone or email.</p>
+                <form action="send_email.php" method="post">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Phone: (323) 682-3806</p>
+            <p>Email: atoz-mg@pacbell.net</p>
+            <p>Address: 1017 Fremont Ave, South Pasadena, CA 91030</p>
+        </div>
+        <div class="copyright">
+            <p>© 2024 Amende and Schultz. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="pages.js"></script>
+</body>
+</html>
