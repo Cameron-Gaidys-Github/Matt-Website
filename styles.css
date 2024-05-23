@@ -1,279 +1,234 @@
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        background-color: #8a8a8a;
-        padding-top: 70px; /* Ensure content is below header */
-    }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #8a8a8a;
+    padding-top: 70px;
+}
 
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: transparent; /* Remove background color */
-        color: #fff;
-        padding: 10px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 999; /* Ensure header is on top */
-        width: 100%;
-    }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    width: 100%;
+}
 
-    .logo-container {
-        flex: 1; /* Take remaining space */
-    }
+.logo-container {
+    flex: 1;
+}
 
-    .logo {
-        max-width: 130px; /* Decrease size of logo */
-    }
+.logo {
+    max-width: 130px;
+}
 
-    nav ul {
-        list-style-type: none;
-        padding: 0;
-        display: flex;
-        margin-top: -5px; /* Move nav buttons up slightly */
-    }
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin-top: -5px;
+}
 
-    nav li {
-        margin: 0 10px;
-        margin-top: -5px;
-    }
+nav li {
+    margin: 0 10px;
+}
 
-    nav li a {
-        text-decoration: none;
-        color: white;
-        padding: 20px;
-        transition: background-color 0.3s ease;
-    }
+nav li a {
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
 
-    nav li a:hover {
-        background-color: #221d7c;
-        color: rgb(190, 190, 190);
-    }
+nav li a:hover {
+    background-color: #221d7c;
+    color: rgb(190, 190, 190);
+}
 
-    #banner-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-    }
+#banner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
 
-    .banner-slide {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transition: opacity 0.5s ease;
-        z-index: 1; /* Ensure the title appears above the image */
-    }
+.banner-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
 
-    .banner-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Ensure images cover entire container */
-        z-index: -1; /* Ensure the title appears above the image */
-        opacity: 85%;
-        filter: blur(8px); /* Apply blur effect to images */
-    }
-    .slide-title {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: rgb(255, 255, 255); /* Adjust color as needed */
-        font-size: 72px; /* Adjust font size as needed */
-        font-weight: bold; /* Adjust font weight as needed */
-        text-align: center;
-        font-family: 'Stencil', sans-serif;
-        z-index: 1; /* Ensure the title appears above the image */
-        letter-spacing: .5rem;
-    }
-    .slide-subtitle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: rgb(255, 255, 255); /* Adjust color as needed */
-        font-size: 28px; /* Adjust font size as needed */
-        font-weight: bold; /* Adjust font weight as needed */
-        text-align: center;
-        font-family: 'Stencil', sans-serif;
-        z-index: 1; /* Ensure the title appears above the image */
-        letter-spacing: .2rem;
-    }
+.banner-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 85%;
+}
 
-    #yellow-line {
-        position: absolute;
-        height: 15px;
-        background-color: #DAC440;
-        width: 100%;
-        bottom: -13.5px; /* Position it at the bottom of its container */
-    }
-    
+.slide-title, .slide-subtitle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: 'Stencil', sans-serif;
+    z-index: 1;
+}
 
-    #prev-slide,
-    #next-slide {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.091);
-        color: white;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        font-size: 20px;
-        z-index: 999; /* Ensure buttons are on top */
-    }
+.slide-title {
+    top: 40%;
+    font-size: 72px;
+    font-weight: bold;
+    letter-spacing: .5rem;
+}
 
-    #prev-slide {
-        left: 20px;
-    }
+.slide-subtitle {
+    top: 50%;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: .2rem;
+}
 
-    #next-slide {
-        right: 20px;
-    }
+#yellow-line {
+    position: absolute;
+    height: 15px;
+    background-color: #DAC440;
+    width: 100%;
+    bottom: -13.5px;
+}
 
-    main {
-        margin-top: 93vh; /* Ensure content starts below slideshow */
-    }
-    .productsPage {
-        margin-top: -650px;
-    }
-    
-    .content-box {
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.317);
-        padding: 30px;
-        margin: 30px;
-        transition: transform 0.3s ease; /* Add transition for smooth hover effect */
-    }
-    
-    .content-box:hover {
-        transform: scale(1.05); /* Increase size on hover */
-    }
-    
-    .content-box h2 {
-        color: #333;
-        font-size: 36px;
-        margin-bottom: 20px;
-    }
-    
-    .content-box p {
-        color: #666;
-        font-size: 18px;
-        margin-bottom: 20px;
-    }
-    .content 
-    {
-        position: relative; /* Ensure proper positioning of photo */
-    }
-    
-    .photo {
-        width: 75%; /* Occupy full width of the screen */
-        height: auto; /* Maintain aspect ratio */
-        margin-top: 20px; /* Adjust margin as needed */
-    }
-    
-    .content-box .btn {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #1B3E90;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-    
-    .content-box .btn:hover {
-        background-color: #154682;
-    }
+#prev-slide, #next-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.091);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 999;
+}
 
-    #welcome-section {
-        background-color: #f9f9f9; /* Set background color */
-        padding: 50px 20px; /* Add padding around content */
-        text-align: center; /* Center-align content */
-    }
+#prev-slide {
+    left: 20px;
+}
 
-    #welcome-section .content {
-        max-width: 800px; /* Set maximum width for content */
-        margin: 0 auto; /* Center content horizontally */
-    }
+#next-slide {
+    right: 20px;
+}
 
-    #welcome-section h2 {
-        font-size: 36px; /* Set font size for heading */
-        color: #333; /* Set color for heading text */
-    }
+main {
+    margin-top: 93vh;
+}
 
-    #welcome-section p {
-        font-size: 18px; /* Set font size for paragraph */
-        color: #666; /* Set color for paragraph text */
-        margin-bottom: 20px; /* Add space below paragraph */
-    }
+.info-section {
+    display: flex;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+}
 
-    #welcome-section .btn {
-        display: inline-block; /* Make button inline with text */
-        padding: 10px 20px; /* Add padding to button */
-        background-color: #1B3E90; /* Set background color for button */
-        color: #fff; /* Set text color for button */
-        text-decoration: none; /* Remove default underline */
-        border-radius: 5px; /* Add border radius for button */
-        transition: background-color 0.3s ease; /* Add transition effect */
-    }
+.info-section:nth-child(even) {
+    background-color: #fff;
+}
 
-    #welcome-section .btn:hover {
-        background-color: #154682; /* Change background color on hover */
-    }
+.info-section img {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.317);
+}
 
-    footer {
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .contact-info {
-        text-align: left;
-    }
-    
-    .rights {
-        margin: 0;
-    }
-    
-    .footer-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .banner {
-        height: 0;
-        width: 100%;
-        background-color: white;
-        position: absolute;
-        top: 0; /* Change the top position to align with the header */
-        left: 0;
-        z-index: -1;
-        transition: height 0.3s ease;
-    }
-    .header-scrolled nav ul li a {
-        color: grey !important; 
-    }
-    .header-scrolled nav ul li a:hover {
-        color: rgb(255, 255, 255) !important; 
-    }
-    .header-scrolled .banner {
-        height: 76px; /* Adjust height as needed */
-    }
+.info-section .text-box {
+    padding: 30px;
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.info-section .text-box h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.info-section .text-box p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.info-section .text-box .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1B3E90;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.info-section .text-box .btn:hover {
+    background-color: #154682;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.rights {
+    margin: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner {
+    height: 0;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: height 0.3s ease;
+}
+
+.header-scrolled {
+    height: 60px;
+}
