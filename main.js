@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Auto advance slides every 5 seconds
     setInterval(() => {
         showSlide(currentSlide + 1);
-    }, 5000);
+    }, 15000);
 
     window.addEventListener('scroll', function() {
         var header = document.getElementById('header');
