@@ -7,9 +7,9 @@
 
 /* Body styling */
 body {
-    font-family: 'Stencil', sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #d4d4d4;
+    background-color: #f4f4f4;
     padding-top: 70px; /* Ensure content is below header */
 }
 
@@ -18,87 +18,54 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent; /* Remove background color */
+    background-color: #333;
     color: #fff;
     padding: 10px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 999; /* Ensure header is on top */
-    width: 100%;
-}
-
-.header-scrolled nav ul li a {
-    color: grey !important; 
-}
-.header-scrolled nav ul li a:hover {
-    color: rgb(255, 255, 255) !important; 
-}
-.header-scrolled .banner {
-    height: 76px; /* Adjust height as needed */
+    z-index: 999;
 }
 
 .logo-container {
-    flex: 1; /* Take remaining space */
+    flex: 1;
 }
 
 .logo {
-    max-width: 130px; /* Decrease size of logo */
+    max-width: 130px;
+    display: block;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
     display: flex;
-    margin-top: -5px; /* Move nav buttons up slightly */
+    margin: 0;
 }
 
 nav li {
-    margin: 0 10px;
-    margin-top: -5px;
+    margin: 0 15px;
 }
 
 nav li a {
     text-decoration: none;
-    color: white;
-    padding: 20px;
-    transition: background-color 0.3s ease;
+    color: #fff;
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 4px;
 }
 
 nav li a:hover {
-    background-color: #221d7c;
-    color: rgb(190, 190, 190);
-}
-
-/* Banner styling */
-.banner {
-    height: 0;
-    width: 100%;
-    background-color: white;
-    position: absolute;
-    top: 0; /* Change the top position to align with the header */
-    left: 0;
-    z-index: -1;
-    transition: height 0.3s ease;
-}
-
-.banner-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity 0.5s ease;
-    z-index: 1; /* Ensure the title appears above the image */
+    background-color: #555;
+    color: #f4f4f4;
 }
 
 /* Hero section styling */
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full viewport height */
-    margin-top: -70px;
+    height: 60vh; /* Adjust to fit your content */
     overflow: hidden;
 }
 
@@ -106,58 +73,76 @@ nav li a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(70%);
 }
 
 /* Yellow line styling */
 .yellow-line {
     width: 100%;
-    height: 15px; /* Adjust height as needed */
-    background-color: yellow;
+    height: 15px;
+    background-color: #f7c600; /* Adjusted color for better visibility */
 }
 
 /* Main section styling */
-main {
-    margin-top: 0; /* Remove top margin */
-    padding-bottom: 200px;
+.productsPage {
+    padding: 20px;
+    background-color: #fff;
 }
 
 .content {
-    max-width: 1200px; /* Limit the maximum width of the content */
-    margin: 0 auto; /* Center the content horizontally */
-    padding: 20px; /* Add padding around the content */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 /* Product section styling */
 .product-section {
-    margin-bottom: 50px; /* Add some space between product sections */
+    margin-bottom: 60px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.product-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .product-section h3 {
-    font-size: 24px; /* Decrease the font size of section headings */
-    color: #333; /* Set the color of section headings */
-    margin-bottom: 20px; /* Add space below section headings */
-    text-align: center; /* Center-align section headings */
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .product-detail {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: row;
     gap: 20px;
-    margin-bottom: 50px;
 }
 
 .product-detail img {
-    max-width: 400px;
-    border-radius: 8px; /* Add some border radius to product images */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .product-detail p {
-    max-width: 500px;
+    max-width: 600px;
     font-size: 16px;
-    color: #333;
+    color: #555;
+    line-height: 1.6;
 }
 
 /* Reverse layout for alternating sections */
@@ -171,21 +156,36 @@ footer {
     color: #fff;
     padding: 20px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap; /* Allow footer content to wrap on smaller screens */
+    text-align: center;
 }
 
 .contact-info {
-    text-align: left;
-    flex: 1; /* Take up remaining space */
+    margin-bottom: 20px;
 }
 
 .contact-info p {
-    margin-bottom: 10px; /* Add some space between contact info items */
+    margin-bottom: 10px;
 }
 
 .rights {
     margin: 0;
-    flex: 1; /* Take up remaining space */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        height: 40vh; /* Adjust hero height on small screens */
+    }
+
+    .product-detail {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-detail img {
+        width: 100%;
+        max-width: none;
+    }
 }

@@ -115,27 +115,29 @@ nav li a:hover {
 }
 
 .slide-title {
-    top: 40%;
+    top: 30%;
     font-size: 72px;
     font-weight: bold;
     letter-spacing: .5rem;
+    font-family: 'Stencil', sans-serif;
 }
 
 .slide-subtitle {
-    top: 50%;
+    top: 60%;
     font-size: 28px;
     font-weight: bold;
     letter-spacing: .2rem;
 }
 
 #yellow-line {
-    position: relative;
-    height: 22px;
-    background-color: #DAC440;
+    position: absolute; /* Position relative to .image-section container */
+    bottom: -34px; /* Position the line just below the image, adjust as needed */
+    left: 0;
     width: 100%;
-    top: 1191px;
-    padding: 0px;
-    margin: 0px;
+    height: 35px;
+    background-color: yellow;
+    color: yellow;
+    z-index: 10000;
 }
 
 #prev-slide, #next-slide {
@@ -287,70 +289,140 @@ footer {
     height: 76px;
 }
 
-/* Media Queries */
+/* Media Queries for Mobile Devices */
 @media (max-width: 968px) {
-    #yellow-line {
-        position: absolute;
-        height: 32px;
-        background-color: #DAC440;
-        width: 100%;
-        bottom: -20px;
-        margin-bottom: -1.33vw;
+    /* Adjust banner container height and remove unwanted grey space */
+    #banner-container {
+        height: 60vh; /* Adjust height */
+        overflow: hidden; /* Prevent overflow */
     }
 
+    /* Banner slide title and subtitle adjustments */
     .slide-title {
-        position: absolute;
+        font-size: 8vw; /* Responsive font size */
+        top: 20%; /* Adjust position */
         left: 50%;
         transform: translateX(-50%);
-        color: rgb(255, 255, 255);
-        text-align: center;
-        font-family: 'Stencil', sans-serif;
-        margin-top: -120px;
-        z-index: 1;
     }
 
-}
+    .slide-subtitle {
+        font-size: 4vw; /* Responsive font size */
+        top: 35%; /* Adjust position */
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
-
-@media (max-width: 768px) {
-
+    /* Header adjustments */
     header {
         flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
     }
 
     .logo-container {
         margin-bottom: 10px;
     }
 
-    nav ul {
+    /* Collapsible Navigation Menu */
+    nav {
+        position: relative;
+        width: 100%;
+    }
+     /* Hide the navigation menu by default */
+     nav ul {
+        display: none;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Dark background for the menu */
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        z-index: 1000;
+    }
+
+    /* Show the navigation menu when active */
+    nav.active ul {
+        display: flex;
+    }
+
+    /* Style the menu toggle button */
+    .menu-toggle {
+        display: block;
+        background: transparent;
+        border: none;
+        font-size: 24px; /* Icon size */
+        color: #fff; /* Icon color */
+        cursor: pointer;
+        padding: 10px;
+        margin-top: 10px; /* Space above the button */
+    }
+
+    /* Style for menu items */
+    nav li {
+        margin: 10px 0;
+    }
+
+    nav li a {
+        padding: 15px;
+        font-size: 18px; /* Font size for menu items */
+        color: #fff; /* Text color */
+    }
+
+    nav ul {
+        display: none; /* Hide the menu by default on small screens */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Background color for menu */
+        padding: 0;
+        margin: 0;
+        z-index: 1000;
+    }
+
+    nav.active ul {
+        display: flex; /* Show menu when nav is active */
     }
 
     nav li {
         margin: 5px 0;
     }
 
-    #banner-container {
-        height: 50vh;
+    nav li a {
+        padding: 15px;
+        font-size: 18px; /* Adjust font size for readability */
+        color: #fff; /* White text color */
     }
 
-    .slide-title {
-        top: 30%;
-        font-size: 10vw;
+    .menu-toggle {
+        display: block; /* Show menu toggle button */
+        background: transparent;
+        border: none;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+        padding: 10px;
+        margin-top: 10px;
     }
 
-    .slide-subtitle {
-        top: 40%;
-        font-size: 5vw;
+    /* Adjust navigation arrows for smaller screens */
+    #prev-slide, #next-slide {
+        font-size: 24px; /* Adjust size */
+        padding: 12px;
     }
 
+    /* Info section adjustments for smaller screens */
     .info-section {
         flex-direction: column;
+        padding: 15px;
     }
 
     .info-section img {
         width: 100%;
+        height: auto;
     }
 
     .info-section .text-box {
@@ -362,12 +434,43 @@ footer {
         flex-direction: column;
     }
 
+    /* Footer adjustments for smaller screens */
     footer {
         flex-direction: column;
+        padding: 10px;
         text-align: center;
     }
 
     .footer-content {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Further adjust elements for very small screens */
+    .slide-title {
+        font-size: 7vw; /* Slightly smaller font size */
+    }
+
+    .slide-subtitle {
+        font-size: 3.5vw; /* Slightly smaller font size */
+    }
+
+    .info-section {
+        padding: 10px;
+    }
+
+    .info-section .text-box h2 {
+        font-size: 24px; /* Adjust heading size */
+    }
+
+    .info-section .text-box p {
+        font-size: 14px; /* Adjust paragraph text size */
+    }
+}
+/* Hide the menu toggle button on desktop screens */
+@media (min-width: 969px) {
+    .menu-toggle {
+        display: none; /* Hide button on larger screens */
     }
 }
