@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $to = 'camerongaidys@gmail.com';
+    $to = 'atoz-mg@pacbell.net';
     $subject = 'New message from your website';
     $message_body = "Name: $name\nEmail: $email\nMessage:\n$message";
 
